@@ -45,18 +45,18 @@ def frequency_mean_reciprocal_rank(predicted,actual):
 
 
 
-original_df  = pd.read_excel('output.xlsx')
-original_df.drop(['Unnamed: 0'],axis= 1,inplace = True)
-original_dict = original_df.set_index('0_x').T.to_dict('list')
+# original_df  = pd.read_excel('output.xlsx')
+# original_df.drop(['Unnamed: 0'],axis= 1,inplace = True)
+# original_dict = original_df.set_index('0_x').T.to_dict('list')
 
-tfidf_results_df = pd.read_excel('TFIDF_results.xlsx')
-tfidf_results_dict = tfidf_results_df.set_index('Unnamed: 0').T.to_dict('list')
+# tfidf_results_df = pd.read_excel('TFIDF_results.xlsx')
+# tfidf_results_dict = tfidf_results_df.set_index('Unnamed: 0').T.to_dict('list')
 
 
-score_list = {}
-for query in tfidf_results_dict.keys():
-    score_list[query] = mean_reciprocal_rank(tfidf_results_dict[query],original_dict[query])
+# score_list = {}
+# for query in tfidf_results_dict.keys():
+#     score_list[query] = mean_reciprocal_rank(tfidf_results_dict[query],original_dict[query])
     
-score_list = {}
-for query in tfidf_results_dict.keys():
-    score_list[query] = frequency_mean_reciprocal_rank(tfidf_results_dict[query],original_dict[query])
+# score_list = {}
+# for query in tfidf_results_dict.keys():
+#     score_list[query] = frequency_mean_reciprocal_rank(tfidf_results_dict[query],original_dict[query])
